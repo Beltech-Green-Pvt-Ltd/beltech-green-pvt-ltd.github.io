@@ -929,7 +929,7 @@ section.dark .info-wrapper .info-tile .title {
   padding-bottom: 50px !important; }
 
   .home-product-text p {
-    font-size: xx-large;
+    /* font-size: xx-large; */
     color: white !important;
   }
 
@@ -1323,7 +1323,7 @@ p.social-links a:hover {
     width:100%;
   }
   .home-product-text p {
-    font-size: 16px;
+    /* font-size: 16px; */
     color: white !important;
   }
   .content,
