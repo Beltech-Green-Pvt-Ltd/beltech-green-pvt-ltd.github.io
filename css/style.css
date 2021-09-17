@@ -927,6 +927,10 @@ section.dark .info-wrapper .info-tile .title {
 .intro.products {
   padding-top: 100px !important;
   padding-bottom: 50px !important; }
+  
+  .home-product-text{
+    padding-bottom: 0 !important;
+  }
 
   .home-product-text p {
     /* font-size: xx-large; */
