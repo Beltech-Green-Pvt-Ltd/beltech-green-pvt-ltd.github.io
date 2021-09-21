@@ -216,8 +216,6 @@ $(document).ready(function () {
 
   $( "#product_modal" ).click(function() {
     $(".dropdown-content").css("display", "block");
-  },function() {
-    $(".dropdown-content").css("display", "none");
   });
 
   $( "#tm" ).click(function() {
