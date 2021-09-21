@@ -67,8 +67,8 @@ function generateFooter(page) {
       <div class="title">Navigation</div>
       <a href="${page == "home" ? "./" : "../"}">Home</a>
       <a href="${page == "home" ? "./" : "../"}#product">Products</a>
-      <a href="${page == "home" ? "./" : "../"}#team">Team</a>
-      <a href="${page == "home" ? "./" : "../"}#careers">Careers</a>
+      <a href="${page == "home" ? "./" : "../"}team">Team</a>
+      <a href="${page == "home" ? "./" : "../"}careers">Careers</a>
     </div>
     <div class="col">
       <div class="title">Quick Links</div>
@@ -214,7 +214,7 @@ $(document).ready(function () {
 
   $(".fa-caret-up").css("display", "none");
 
-  $( "#product_modal" ).hover(function() {
+  $( "#product_modal" ).click(function() {
     $(".dropdown-content").css("display", "block");
   },function() {
     $(".dropdown-content").css("display", "none");
