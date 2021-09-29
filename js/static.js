@@ -190,8 +190,6 @@ $(document).ready(function () {
   $(".dropdown-content").html(generateDropDown(page))
 
   $(window).scroll(function () {
-    const section = document.getElementsByTagName("section");
-    console.log(section)
     if (!navToggle) {
       headerScroll(page);
     }
