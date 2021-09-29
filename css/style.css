@@ -109,10 +109,16 @@ body {
   display: none;
 }
 .product-video{
-  width:100% !important;
+  width:90% !important;
   height:95% !important;
+  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 50%);
   margin-top: -12%;
+  margin-bottom: 15%;
+
 }
+.mlp10{
+  margin-left: 10%;
+}  
 .contact-form input{
   width: 90%;
   border: 2px solid #dbdfe4;
@@ -1349,6 +1355,7 @@ p.social-links a:hover {
     height: 23rem;
     width:100%;
   }
+  
   .home-product-text p {
     /* font-size: 16px; */
     color: white !important;
@@ -1356,7 +1363,10 @@ p.social-links a:hover {
   .product-video{
     width:100% !important;
     height:95% !important;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 50%);
     margin-top:0;
+    margin-bottom: 0;
+   margin-left: 0;
   }
   .content,
   .content-home,

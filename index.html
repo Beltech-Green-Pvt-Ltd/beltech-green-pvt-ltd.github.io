@@ -54,13 +54,6 @@
         <img src="img/buildings.png" class="building">
       </div> 
     </div>
-    <!-- <div class="content-lg">
-      <h1 class="light-color center padding-lr2">Building Cities of the Future</h1>
-      <p class="light-color center">
-        with AI and IoT
-      </p>
-    </div>
-    <img src="img/building_banner.png" style="width:100%;"> -->
     <div id="about"></div>
   </section>
   <section>
@@ -68,7 +61,6 @@
       <div class="info-wrapper" style="margin: 3% 0;">
         <div class="content-about">
           <video controls muted autoplay loop src="./video/video15.mp4" type="video/mp4">
-            <!-- <source src="https://traffic-light-videos.beltech.ai/beltech-product.mp4" type="video/mp4"> -->
           </video>
         </div>
         <div class="content-about" >
@@ -123,7 +115,7 @@
   <section class="home-product-text" style="background-color: #e48339;">
     <div class="split-wrapper">
       <div class="split">
-        <video muted autoplay loop src="./video/traffic_management.mp4" type="video/mp4" class="product-video">
+        <video muted autoplay loop src="./video/traffic_management.mp4" type="video/mp4" class="product-video mlp10">
         </video>
       </div>
       <div class="split product-text">
@@ -171,7 +163,7 @@
   <section class="home-product-text" style="background-color: #f5c145;">
     <div class="split-wrapper">
       <div class="split">
-        <video muted autoplay loop src="./video/traffic_management.mp4" type="video/mp4" class="product-video">
+        <video muted autoplay loop src="./video/traffic_management.mp4" type="video/mp4" class="product-video mlp10">
         </video>
       </div>
       <div class="split product-text">
@@ -277,114 +269,6 @@
   <script type="text/javascript" src="js/static.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
-  <script>
-    function generateCareerElem(data, index) {
-      return `<div class="team-member" aria-label="${index}">
-    <div class="photo"><img src="/team/${data.ImagePath}" alt="Team member image"/></div>
-    <p class="lg">${data.Name}</p>
-    <p>${data.Position}</p>
-  </div>`;
-    }
-
-    function generateAdvisorElem(data, index) {
-      return `<div class="card info-tile" style="height:250px;background: transparent !important;margin: 4rem;padding: 0 !important;">
-           <img src="./advisor/${data.ImagePath}" style="width: 100%;height:100%;"/>
-           <div style="width: 100%;
-           height: 100%;
-           position: relative;
-           bottom: 248px;
-           background: linear-gradient(180deg, #ffffff30,#ffffff00, #191d24) !important;
-           ">
-          <div style="padding-top: 190px;">
-          <h5 style="color: white;text-align: center;">${data.Name}</h5>
-          <p style="color: orange;text-align: center;margin-top: 5px;font-size:10px;">${data.Position}</p>
-          </div>
-          </div>
-        </div>`;
-    }
-
-    function generatePopUp(data) {
-      return `<div class="close-button"><i class="fas fa-times"></i></div>
-  <div class="content-lg">
-    <div class="data-wrapper">
-      <div class="photo">
-        <img src="/team/${data.ImagePath}" alt="Member Photo" />
-      </div>
-      <div class="data">
-        <h5>${data.Name}</h5>
-        <p><b>${data.Position}</b> &middot; <b>${data.Location}</b></p>
-        <p>
-        ${data.LinkedIn != "NA"
-          ? `<a href="${data.LinkedIn}">LinkedIn</a> &middot;`
-          : ""
-        } ${data.Website != "NA" ? `<a href="${data.Website}">Website</a> &middot;` : ""
-        }  ${data.Resume != "NA" ? `<a href="${data.Resume}">Resume</a>` : ""}
-        </p>
-      </div>
-    </div>
-    <h6>About</h6>
-    <p>
-      ${data.About}
-    </p>
-    <h6>Educational Institution</h6>
-    <p>jnjj 
-      ${data.School}
-    </p>
-  </div>`;
-    }
-
-    function fillCareers(arr) {
-      $(".team-wrapper").html("");
-      arr.map((doc, index) => {
-        if (index <= 5) {
-          $(".team-wrapper").append(generateCareerElem(doc, index));
-        }
-      });
-    }
-
-    function fillAdvisor(arr) {
-      $("#advisor").html("");
-      arr.map((doc, index) => {
-          $("#advisor").append(generateAdvisorElem(doc, index));
-      });
-    }
-
-
-    function openPopUp(doc) {
-      $(".team-pop-up").removeClass("close");
-      $(".black-screen").removeClass("close");
-      $(".team-pop-up").html(generatePopUp(doc));
-    }
-
-    var data;
-    var ad_data;
-
-    $(document).ready(function () {
-      jQuery.get("/team/team.csv", (csv) => {
-        data = $.csv.toObjects(csv);
-        fillCareers(data);
-        $(".team-wrapper").on("click", ".team-member", function () {
-          let i = $(this).attr("aria-label");
-          openPopUp(data[i]);
-        });
-
-        $(".team-pop-up").on("click", ".close-button", function () {
-          $(".team-pop-up").addClass("close");
-          $(".black-screen").addClass("close");
-        });
-
-        $(".black-screen").click(function () {
-          $(".team-pop-up").addClass("close");
-          $(".black-screen").addClass("close");
-        });
-      });
-
-      jQuery.get("/advisor/advisor.csv", (csv) => {
-        ad_data = $.csv.toObjects(csv);
-        fillAdvisor(ad_data);
-      });
-    });
-  </script>
 </body>
 
 </html>

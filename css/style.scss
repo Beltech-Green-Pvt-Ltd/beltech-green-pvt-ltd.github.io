@@ -125,9 +125,12 @@ a {
   text-decoration: none !important;
 }
 .product-video{
-  width:100% !important;
+  width:90% !important;
   height:95% !important;
+  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 50%);
   margin-top: -12%;
+  margin-bottom: 15%;
+
 }
 
 
@@ -1392,10 +1395,17 @@ p.social-links {
     width: 90%;
 }
 
+.mlp10{
+  margin-left: 10%;
+}    
+
 .product-video{
   width:100% !important;
   height:95% !important;
+  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 50%);
   margin-top:0;
+  margin-bottom: 0;
+  margin-left: 0;
 }
 
   button {
