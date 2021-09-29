@@ -190,6 +190,8 @@ $(document).ready(function () {
   $(".dropdown-content").html(generateDropDown(page))
 
   $(window).scroll(function () {
+    const section = document.getElementsByTagName("section");
+    console.log(section)
     if (!navToggle) {
       headerScroll(page);
     }
@@ -202,7 +204,6 @@ $(document).ready(function () {
       openNav(page);
     }
   });
-
 
   $("header").on("click", ".hamburger", function () {
     if (navToggle) {
@@ -291,6 +292,4 @@ $(document).ready(function () {
        $("#sc-1").css("display", "none");
        $("#pt-1").css("display", "none");
     });
-  
-
 });
