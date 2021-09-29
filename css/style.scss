@@ -104,6 +104,11 @@ $text-light: #b0bdca;
   animation: path 1s ease infinite;
 }
 
+.home-product-text p {
+  font-size: x-large;
+  color: white !important;
+}
+
 .trans {
   position: absolute;
   top: 50%;
@@ -366,6 +371,7 @@ header.min {
   }
 }
 
+
 .margins {
   margin: 20px 0px;
 }
@@ -611,6 +617,7 @@ h6 {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 
 button {
   position: relative;
@@ -927,10 +934,7 @@ section.dark {
 .home-product-text{
   padding-bottom: 0 !important;
 }
-.home-product-text p {
-  // font-size: xx-large;
-  color: white !important;
-}
+
 
 .product-text {
   position: relative;
@@ -1422,7 +1426,7 @@ p.social-links {
     }
   }
   .home-product-text p {
-    // font-size: 16px;
+    font-size: 16px;
     color: white !important;
   }
   .product-text {
