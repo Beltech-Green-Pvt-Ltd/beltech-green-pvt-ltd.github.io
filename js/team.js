@@ -6,6 +6,17 @@ function generateCareerElem(data, index) {
   </div>`;
 }
 
+function generateAdvisorElem(data, index) {
+  return `<div class="info-tile" style="margin:1rem 3rem !important;">
+  <div class="card" style="width:250px;height:250px;">
+    <img src="${data.ImagePath}" style="width:250px;height:250px;">
+  </div>
+  <h6 class="center" style="margin-top: 1rem;color: white;">${data.Name}</h6>
+  <p style="color: orange;font-size: 12px;">${data.Position}</p>
+  <p style="color: #d9e4eb;">${data.Description}</p>
+</div>`;
+}
+
 function generatePopUp(data) {
   return `<div class="close-button"><i class="fas fa-times"></i></div>
   <div class="content-lg">
@@ -45,6 +56,13 @@ function fillCareers(arr) {
   });
 }
 
+function fillAdvisors(arr) {
+  $(".info-wrapper").html("");
+  arr.map((doc, index) => {
+    $(".info-wrapper").append(generateAdvisorElem(doc, index));
+  });
+}
+
 function openPopUp(doc) {
   $(".team-pop-up").removeClass("close");
   $(".black-screen").removeClass("close");
@@ -52,6 +70,7 @@ function openPopUp(doc) {
 }
 
 var data;
+var advisor_data;
 
 $(document).ready(function () {
   jQuery.get("team.csv", (csv) => {
@@ -72,5 +91,9 @@ $(document).ready(function () {
       $(".team-pop-up").addClass("close");
       $(".black-screen").addClass("close");
     });
+  });
+  jQuery.get("advisor.csv", (csv) => {
+    advisor_data = $.csv.toObjects(csv);
+    fillAdvisors(advisor_data);
   });
 });

@@ -108,7 +108,29 @@ body {
 #tm-1,#sec-1,#sc-1,#pt-1 {
   display: none;
 }
-
+.product-video{
+  width:100% !important;
+  height:95% !important;
+  margin-top: -12%;
+}
+.contact-form input{
+  width: 90%;
+  border: 2px solid #dbdfe4;
+  border-radius: 5px;
+  position: relative;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 2rem;
+}
+.comment-area{
+  width: 90%;
+  border: 2px solid #dbdfe4;
+  border-radius: 5px;
+  position: relative;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 2rem;
+}
 a {
   color: inherit !important;
   text-decoration: none !important; }
@@ -1223,6 +1245,7 @@ p.social-links a:hover {
     height: 100%;
     width:100%;
   }
+
   .content, .content-home {
     width: 50%; }
   .content-md, .content-home-md{
@@ -1329,6 +1352,11 @@ p.social-links a:hover {
   .home-product-text p {
     /* font-size: 16px; */
     color: white !important;
+  }
+  .product-video{
+    width:100% !important;
+    height:95% !important;
+    margin-top:0;
   }
   .content,
   .content-home,
