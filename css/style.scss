@@ -557,6 +557,10 @@ section.no-padding {
   display: none;
 }
 
+.margin-t24p{
+  margin-top: 24% !important;
+}
+
 .center {
   text-align: center;
 }
@@ -1093,7 +1097,33 @@ input.search-box:focus {
 
 /*CONTACT*/
 .contact-form input{
-  width:100%;
+  width: 90%;
+  border: 2px solid #dbdfe4;
+  border-radius: 5px;
+  position: relative;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 2rem;
+}
+
+.contact-form select{
+  width: 93.5%;
+  border: 2px solid #dbdfe4;
+  border-radius: 5px;
+  position: relative;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 2rem;
+}
+
+.comment-area{
+  width: 90%;
+  border: 2px solid #dbdfe4;
+  border-radius: 5px;
+  position: relative;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 2rem;
 }
 
 .contact-wrapper {
