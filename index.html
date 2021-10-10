@@ -138,11 +138,11 @@
         <div class="content-lg" style="margin-top: 0 !important;color: white !important;">
           <h1>Smart City</h1>
           <p><span class="iconify" style="font-size: 8px;" data-icon="fa-solid:dot-circle" data-inline="false"></span>
-            Smart Street Lights</p>
-          <p><span class="iconify" style="font-size: 8px;" data-icon="fa-solid:dot-circle" data-inline="false"></span>
             Garbage Detection and Tracking</p>
           <p><span class="iconify" style="font-size: 8px;" data-icon="fa-solid:dot-circle" data-inline="false"></span>
             Pothole Tracking</p>
+          <p><span class="iconify" style="font-size: 8px;" data-icon="fa-solid:dot-circle" data-inline="false"></span>
+              Smart Street Lights</p>
           <div class="button-wrapper">
             <a href="./smart-city"><button>View Details</button></a>
           </div>
@@ -176,6 +176,7 @@
         </div>
       </div>
     </div>
+    <div id="impact"></div>
   </section>
   <section class="fix-space-bottom fix-space-top">
     <h3 class="center">Impact</h3>
@@ -273,49 +274,6 @@
   <script type="text/javascript" src="js/static.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
-  <script>
-    function SubForm() {
-      let values = $("#contactForm").serializeArray();
-      if (values[0].value != "" && values[1].value != "" && values[2].value != "" && values[4].value != "none") {
-        let valid_email = validateEmail(values[1].value);
-        if (valid_email == true) {
-          if (values[2].value.length == 10) {
-            $.ajax({
-              url: 'https://api.apispreadsheets.com/data/19051/',
-              type: 'post',
-              data: $("#contactForm").serializeArray(),
-              success: function () {
-                $("#contactForm")[0].reset();
-                alert("Thanks for contacting us :)");
-              },
-              error: function () {
-                alert("There was an error sending your details:(")
-              }
-            });
-          }
-          else {
-            alert("Enter a valid phone number!")
-          }
-        }
-        else {
-          alert("Enter a valid email!")
-        }
-
-      }
-      else {
-        alert("Mandatory fields can not be empty!")
-      }
-
-    }
-    function validateEmail(emailAdress) {
-      let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      if (emailAdress.match(regexEmail)) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  </script>
 </body>
 
 </html>
