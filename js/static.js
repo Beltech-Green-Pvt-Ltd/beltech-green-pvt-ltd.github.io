@@ -2,22 +2,22 @@ let navToggle = false;
 
 function generateLinks(page) {
   const innerHTML = `<div class="links">
-    <div class="link ${page == "home" ? "current" : ""}">
+    <div class="link ${page == "home" ? "current" : ""}" onclick="currentHeader("home")">
       <a href="${page == "home" ? "./" : "../"}">
         <div class="title">Home</div>
       </a>
     </div>
-    <div class="link ${page == "about" ? "current" : ""}">
+    <div class="link ${page == "about" ? "current" : ""}" onclick="currentHeader("about")">
       <a href="${page == "home" ? "./" : "../"}#about">
         <div class="title">About</div>
       </a>
     </div> 
-    <div id="product_modal" class="link ${page == "products" ? "current" : ""}">
+    <div id="product_modal" class="link ${page == "products" ? "current" : ""}" onclick="currentHeader("products")">
       <a href="${page == "home" ? "./" : "../"}#product">
         <div class="title dropdown">Products</div>
       </a>
     </div>
-    <div class="link ${page == "impact" ? "current" : ""}">
+    <div class="link ${page == "impact" ? "current" : ""}" onclick="currentHeader("impact")">
     <a href="${page == "home" ? "./" : "../"}#impact">
       <div class="title">Impact</div>
     </a>
@@ -32,13 +32,55 @@ function generateLinks(page) {
         <div class="title">Careers</div>
       </a>
     </div>
-    <div class="link ${page == "contact" ? "current" : ""}">
+    <div class="link ${page == "contact" ? "current" : ""}" onclick="currentHeader("contact")">
       <a href="${page == "home" ? "./" : "../"}#contact">
         <div class="title">Contact</div>
       </a>
     </div>
     </div>`;
   return innerHTML;
+}
+
+function currentHeader(page){
+  switch (page) {
+    case "home":
+      header_links[0].classList.add('current');
+      header_links[1].classList.remove('current');
+      header_links[2].classList.remove('current');
+      header_links[3].classList.remove('current');
+      header_links[6].classList.remove('current');
+    break;
+    case "about":
+      header_links[0].classList.remove('current');
+      header_links[1].classList.add('current');
+      header_links[2].classList.remove('current');
+      header_links[3].classList.remove('current');
+      header_links[6].classList.remove('current');
+      break;
+    case "products":
+      header_links[0].classList.remove('current');
+      header_links[1].classList.remove('current');
+      header_links[2].classList.add('current');
+      header_links[3].classList.remove('current');
+      header_links[6].classList.remove('current');
+      break;
+    case "impact":
+      header_links[0].classList.remove('current');
+      header_links[1].classList.remove('current');
+      header_links[2].classList.remove('current');
+      header_links[3].classList.add('current');
+      header_links[6].classList.remove('current');
+      break;
+    case "contact":
+      header_links[0].classList.remove('current');
+      header_links[1].classList.remove('current');
+      header_links[2].classList.remove('current');
+      header_links[3].classList.remove('current');
+      header_links[6].classList.add('current');
+      break;
+    default:
+    // code block
+  }
 }
 
 function generateHeader(page) {
