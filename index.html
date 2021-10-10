@@ -323,7 +323,7 @@
 
     $(document).scroll(function () {
       $('div').each(function () {
-        if ($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
+        // if ($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
           switch ($(this).attr('id')) {
             case "home":
               header_links[0].classList.add('current');
@@ -364,7 +364,7 @@
             // code block
           }
 
-        }
+        // }
       });
     });
   </script>
