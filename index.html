@@ -41,7 +41,7 @@
   <header aria-label="home"></header>
   <nav></nav>
   <section class="intro home-bg dark dark-color" id="home">
-    <div class="split-wrapper" id="home">
+    <div class="split-wrapper">
       <div class="split product-text">
         <div class="content-lg">
           <h1 class="light-color center padding-lr2 margin-t24p">Building Cities of the Future</h1>
@@ -175,7 +175,6 @@
         </div>
       </div>
     </div>
-    <div id="impact"></div>
   </section>
   <section class="fix-space-bottom fix-space-top" id="impact">
     <h3 class="center">Impact</h3>
@@ -322,8 +321,8 @@
     }
 
     $(document).scroll(function () {
-      $('div').each(function () {
-        // if ($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
+      $('section').each(function () {
+        if ($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
           switch ($(this).attr('id')) {
             case "home":
               header_links[0].classList.add('current');
@@ -364,7 +363,7 @@
             // code block
           }
 
-        // }
+        }
       });
     });
   </script>
