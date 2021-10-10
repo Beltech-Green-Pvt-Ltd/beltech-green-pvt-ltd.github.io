@@ -11,7 +11,7 @@ function generateLinks(page) {
       <a href="${page == "home" ? "./" : "../"}#about">
         <div class="title">About</div>
       </a>
-    </div>
+    </div> 
     <div id="product_modal" class="link ${page == "products" ? "current" : ""}">
       <a href="${page == "home" ? "./" : "../"}#product">
         <div class="title dropdown">Products</div>
@@ -19,7 +19,7 @@ function generateLinks(page) {
     </div>
     <div class="link ${page == "impact" ? "current" : ""}">
     <a href="${page == "home" ? "./" : "../"}#impact">
-      <div class="title dropdown">Impact</div>
+      <div class="title">Impact</div>
     </a>
     </div>
     <div class="link ${page == "team" ? "current" : ""}">
@@ -171,18 +171,6 @@ function generateDropDown(page){
 
   return dropDownList;
 }
-
-$(document).scroll(function () {
-  $('section').each(function () {
-      if($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
-          if($(this).attr('id') == "skill"){
-            myFunctionScroll()
-            $(document).off('scroll');
-          }
-      }
-  });
-});
-
 
 function myFunctionScroll(){
   $('.counter-count').each(function(){$(this).prop('Counter',0).animate({Counter:$(this).text()},{duration:2000,easing:'swing',step:function(now){$(this).text(Math.ceil(now))}})})

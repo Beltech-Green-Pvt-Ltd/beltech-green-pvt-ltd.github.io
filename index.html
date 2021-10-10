@@ -40,7 +40,7 @@
   </div>
   <header aria-label="home"></header>
   <nav></nav>
-  <section class="intro home-bg dark dark-color">
+  <section class="intro home-bg dark dark-color" id="home">
     <div class="split-wrapper">
       <div class="split product-text">
         <div class="content-lg">
@@ -56,7 +56,7 @@
     </div>
     <div id="about"></div>
   </section>
-  <section>
+  <section id="about">
     <div class="content-lg">
       <div class="info-wrapper" style="margin: 3% 0;">
         <div class="content-about">
@@ -88,7 +88,7 @@
     </div>
     <div id="product"></div>
   </section>
-  <section class="home-product-text" style="background-color: #50b590;">
+  <section class="home-product-text" style="background-color: #50b590;" id="product">
     <div class="split-wrapper">
       <div class="split product-text">
         <div class="content-lg" style="margin-top: 0 !important;color: white !important;">
@@ -109,7 +109,7 @@
     </div>
 
   </section>
-  <section class="home-product-text" style="background-color: #e48339;">
+  <section class="home-product-text" style="background-color: #e48339;" id="product">
     <div class="split-wrapper">
       <div class="split">
         <video muted autoplay loop src="./video/security.mp4" type="video/mp4" class="product-video mlp10">
@@ -132,7 +132,7 @@
     </div>
 
   </section>
-  <section class="home-product-text" style="background-color: #2371e8;">
+  <section class="home-product-text" style="background-color: #2371e8;" id="product">
     <div class="split-wrapper">
       <div class="split product-text">
         <div class="content-lg" style="margin-top: 0 !important;color: white !important;">
@@ -142,7 +142,7 @@
           <p><span class="iconify" style="font-size: 8px;" data-icon="fa-solid:dot-circle" data-inline="false"></span>
             Pothole Tracking</p>
           <p><span class="iconify" style="font-size: 8px;" data-icon="fa-solid:dot-circle" data-inline="false"></span>
-              Smart Street Lights</p>
+            Smart Street Lights</p>
           <div class="button-wrapper">
             <a href="./smart-city"><button>View Details</button></a>
           </div>
@@ -153,9 +153,8 @@
         </video>
       </div>
     </div>
-
   </section>
-  <section class="home-product-text" style="background-color: #f5c145;">
+  <section class="home-product-text" style="background-color: #f5c145;" id="product">
     <div class="split-wrapper">
       <div class="split">
         <video muted autoplay loop src="./video/public_transport.mp4" type="video/mp4" class="product-video mlp10">
@@ -175,7 +174,7 @@
           </div>
         </div>
       </div>
-    </div>   
+    </div>
   </section>
   <section class="fix-space-bottom fix-space-top" id="impact">
     <h3 class="center">Impact</h3>
@@ -212,7 +211,7 @@
     <h5 class="center margins-xl coming-soon">COMING &nbsp;&nbsp;SOON</h5>
     <div id="contact"></div>
   </section>
-  <section>
+  <section id="contact">
     <div class="content-lg">
       <h3 class="center">Contact</h3>
       <div class="contact-wrapper">
@@ -274,48 +273,99 @@
   <script type="text/javascript" src="js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
   <script>
+    let header_links = []
+    $(document).ready(function () {
+      header_links = document.getElementsByClassName("link");
+    })
     function SubForm() {
-  let values = $("#contactForm").serializeArray();
-  if (values[0].value != "" && values[1].value != "" && values[2].value != "" && values[4].value != "none") {
-    let valid_email = validateEmail(values[1].value);
-    if (valid_email == true) {
-      if (values[2].value.length == 10) {
-        $.ajax({
-          url: 'https://api.apispreadsheets.com/data/19247/',
-          type: 'post',
-          data: $("#contactForm").serializeArray(),
-          success: function () {
-            $("#contactForm")[0].reset();
-            alert("Thanks for contacting us :)");
-          },
-          error: function (err) {
-            alert("There was an error sending your details:(")
-            console.log(err)
+      let values = $("#contactForm").serializeArray();
+      if (values[0].value != "" && values[1].value != "" && values[2].value != "" && values[4].value != "none") {
+        let valid_email = validateEmail(values[1].value);
+        if (valid_email == true) {
+          if (values[2].value.length == 10) {
+            $.ajax({
+              url: 'https://api.apispreadsheets.com/data/19247/',
+              type: 'post',
+              data: $("#contactForm").serializeArray(),
+              success: function () {
+                $("#contactForm")[0].reset();
+                alert("Thanks for contacting us :)");
+              },
+              error: function (err) {
+                alert("There was an error sending your details:(")
+                console.log(err)
+              }
+            });
           }
-        });
+          else {
+            alert("Enter a valid phone number!")
+          }
+        }
+        else {
+          alert("Enter a valid email!")
+        }
+
       }
       else {
-        alert("Enter a valid phone number!")
+        alert("Mandatory fields can not be empty!")
+      }
+
+    }
+    function validateEmail(emailAdress) {
+      let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (emailAdress.match(regexEmail)) {
+        return true;
+      } else {
+        return false;
       }
     }
-    else {
-      alert("Enter a valid email!")
-    }
 
-  }
-  else {
-    alert("Mandatory fields can not be empty!")
-  }
+    $(document).scroll(function () {
+      $('section').each(function () {
+        if ($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
+          switch ($(this).attr('id')) {
+            case "home":
+              header_links[0].classList.add('current');
+              header_links[1].classList.remove('current');
+              header_links[2].classList.remove('current');
+              header_links[3].classList.remove('current');
+              header_links[6].classList.remove('current');
+            break;
+            case "about":
+              header_links[0].classList.remove('current');
+              header_links[1].classList.add('current');
+              header_links[2].classList.remove('current');
+              header_links[3].classList.remove('current');
+              header_links[6].classList.remove('current');
+              break;
+            case "product":
+              header_links[0].classList.remove('current');
+              header_links[1].classList.remove('current');
+              header_links[2].classList.add('current');
+              header_links[3].classList.remove('current');
+              header_links[6].classList.remove('current');
+              break;
+            case "impact":
+              header_links[0].classList.remove('current');
+              header_links[1].classList.remove('current');
+              header_links[2].classList.remove('current');
+              header_links[3].classList.add('current');
+              header_links[6].classList.remove('current');
+              break;
+            case "contact":
+              header_links[0].classList.remove('current');
+              header_links[1].classList.remove('current');
+              header_links[2].classList.remove('current');
+              header_links[3].classList.remove('current');
+              header_links[6].classList.add('current');
+              break;
+            default:
+            // code block
+          }
 
-}
-function validateEmail(emailAdress) {
-  let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if (emailAdress.match(regexEmail)) {
-    return true;
-  } else {
-    return false;
-  }
-}
+        }
+      });
+    });
   </script>
 </body>
 
