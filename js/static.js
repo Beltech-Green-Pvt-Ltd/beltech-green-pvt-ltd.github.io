@@ -187,48 +187,7 @@ $(document).scroll(function () {
 function myFunctionScroll(){
   $('.counter-count').each(function(){$(this).prop('Counter',0).animate({Counter:$(this).text()},{duration:2000,easing:'swing',step:function(now){$(this).text(Math.ceil(now))}})})
 }
-function SubForm() {
-  let values = $("#contactForm").serializeArray();
-  if (values[0].value != "" && values[1].value != "" && values[2].value != "" && values[4].value != "none") {
-    let valid_email = validateEmail(values[1].value);
-    if (valid_email == true) {
-      if (values[2].value.length == 10) {
-        $.ajax({
-          url: 'https://api.apispreadsheets.com/data/19247/',
-          type: 'post',
-          data: $("#contactForm").serializeArray(),
-          success: function () {
-            $("#contactForm")[0].reset();
-            alert("Thanks for contacting us :)");
-          },
-          error: function (err) {
-            alert("There was an error sending your details:(")
-            console.log(err)
-          }
-        });
-      }
-      else {
-        alert("Enter a valid phone number!")
-      }
-    }
-    else {
-      alert("Enter a valid email!")
-    }
 
-  }
-  else {
-    alert("Mandatory fields can not be empty!")
-  }
-
-}
-function validateEmail(emailAdress) {
-  let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if (emailAdress.match(regexEmail)) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
 $(document).ready(function () {
   const page = $("header").attr("aria-label");
