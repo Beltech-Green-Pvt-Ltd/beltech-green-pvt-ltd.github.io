@@ -13,7 +13,7 @@ function generateLinks(page) {
       </a>
     </div> 
     <div id="product_modal" class="link ${page == "products" ? "current" : ""}" onclick="currentHeader("products")">
-      <a>
+      <a href="${page == "home" ? "./" : "../"}#">
         <div class="title dropdown">Products</div>
       </a>
     </div>
