@@ -13,7 +13,7 @@ function generateLinks(page) {
       </a>
     </div> 
     <div id="product_modal" class="link ${page == "products" ? "current" : ""}" onclick="currentHeader("products")">
-      <a href="${page == "home" ? "./" : "../"}#product">
+      <a href="${page == "home" ? "./#product" : "../"}">
         <div class="title dropdown">Products</div>
       </a>
     </div>
@@ -192,20 +192,18 @@ function generateDropDown(page){
   <a class="dropDown-element" id="sec">Security <i class="fas fa-caret-down"></i><i class="fas fa-caret-up"></i></a>
   <ul id="sec-1">
   <li><a href="${page == "home" ? "./security" : "../security"}#crime-detection">Crime Detection</a></li>
-  <li><a href="${page == "home" ? "./security" : "../security"}#tracking-suspected-criminals">Tracking of Suspected Criminals</a></li> 
   <li><a href="${page == "home" ? "./security" : "../security"}#women-safety">Women Safety </a></li>
+  <li><a href="${page == "home" ? "./security" : "../security"}#tracking-suspected-criminals">Tracking of Suspected Criminals</a></li> 
   </ul>
   <a class="dropDown-element" id="sc">Smart City <i class="fas fa-caret-down"></i><i class="fas fa-caret-up"></i></a>
   <ul id="sc-1">
   <li><a href="${page == "home" ? "./smart-city" : "../smart-city"}#garbage-tracking">Garbage tracking</a></li>
   <li><a href="${page == "home" ? "./smart-city" : "../smart-city"}#public-infrastructure">Public infrastructure tracking</a></li> 
   <li><a href="${page == "home" ? "./smart-city" : "../smart-city"}#street-light">Smart Street Lights</a></li>
-  <li><a href="${page == "home" ? "./smart-city" : "../smart-city"}#wifi">WiFi for the city</a></li>
   </ul>
   <a class="dropDown-element" id="pt">Public Transport <i class="fas fa-caret-down"></i><i class="fas fa-caret-up"></i></a>
   <ul id="pt-1">
   <li><a href="${page == "home" ? "./public-transport" : "../public-transport"}#smart-buses">Smart Buses</a></li>
-  <li><a href="${page == "home" ? "./public-transport" : "../public-transport"}#smart-ticketing">Smart Ticketing</a></li> 
   <li><a href="${page == "home" ? "./public-transport" : "../public-transport"}#public-transportation">Public Transport Locator</a></li>
   </ul>
   <a class="dropDown-element"></a>
