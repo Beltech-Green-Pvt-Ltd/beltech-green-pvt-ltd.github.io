@@ -248,7 +248,7 @@ $(document).ready(function () {
 
   $(".fa-caret-up").css("display", "none");
 
-  $( "#product_modal" ).click(function() {
+  $( "#product_modal" ).hover(function() {
     $(".dropdown-content").css("display", "block");
   });
 
