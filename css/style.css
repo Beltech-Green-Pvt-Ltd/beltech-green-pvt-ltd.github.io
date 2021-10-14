@@ -108,6 +108,10 @@ body {
 #tm-1,#sec-1,#sc-1,#pt-1 {
   display: none;
 }
+.product_checkbox{
+  width:25%;
+  font-size: 12px;
+}
 .product-video{
   width:90% !important;
   height:93% !important;
@@ -1373,6 +1377,10 @@ p.social-links a:hover {
   .building{
     height: 23rem;
     width:100%;
+  }
+  .product_checkbox{
+    width:25%;
+    font-size: 10px;
   }
   
   .home-product-text p {

@@ -174,24 +174,24 @@
     <div class="content-lg skill5">
       <div class="info-wrapper">
         <div class="skill5-counter info-tile">
-          <p class="counter-count">30 secs</p>
-          <p class="counter-bottom">Time saved by a vehicle<br/> per junction per day</p>
+          <p class="counter-count">30 sec</p>
+          <p class="counter-bottom">Time saved by a vehicle<br /> per junction per day</p>
         </div>
         <div class="skill5-counter info-tile">
-          <p class="counter-count">25000 mins</p>
-          <p class="counter-bottom">Time saved at a junction<br/> per day</p>
+          <p class="counter-count">25,000 min</p>
+          <p class="counter-bottom">Time saved at a junction<br /> per day</p>
         </div>
         <div class="skill5-counter info-tile">
-          <p class="counter-count">83000 hrs</p>
-          <p class="counter-bottom">Time saved in a city<br/> per day</p>
+          <p class="counter-count">83,000 hr</p>
+          <p class="counter-bottom">Time saved in a city<br /> per day</p>
         </div>
         <div class="skill5-counter info-tile">
-          <p class="counter-count">75000 ltrs</p>
-          <p class="counter-bottom">Fuel saved per day<br/> per city</p>
+          <p class="counter-count">75,000 ltr</p>
+          <p class="counter-bottom">Fuel saved per day<br /> per city</p>
         </div>
         <div class="skill5-counter info-tile">
-          <p class="counter-count">200t</p>
-          <p class="counter-bottom">Toxic emission reduced<br/> per day per city</p>
+          <p class="counter-count">200 tons</p>
+          <p class="counter-bottom">Toxic emission reduced<br /> per day per city</p>
         </div>
       </div>
     </div>
@@ -215,18 +215,28 @@
             <input type="email" id="email" name="email" placeholder="Email*">
             <input type="number" id="phone" name="phone" placeholder="Phone*">
             <input type="text" id="org" name="org" placeholder="Organisation Name">
-            <select name="product" id="product" multiple>
-              <option value="none" selected>Select Product(s) that you're interested in *</option>
-              <option value="Traffic Management">Traffic Management</option>
-              <option value="Security">Security</option>
-              <option value="Smart City">Smart City</option>
-              <option value="Public Transport">Public Transport</option>
-            </select>
-            <textarea class="comment-area" rows="6" name="details" placeholder="Tell us about your requirement (optional)"
-              spellcheck="true"></textarea>
+
+
+            <p><span style="font-size: 14px;">Select Product(s) that you're interested in *</span></p>
+            <div class="row">
+              <div class="row product_checkbox">
+                Traffic Management<input type="checkbox"  name="product1" value="Traffic Management">
+              </div>
+              <div class="row product_checkbox">
+                Security<input type="checkbox"name="product2" value="Security">
+              </div>
+              <div class="row product_checkbox">
+                Smart City<input type="checkbox" name="product3" value="Smart City">
+              </div>
+              <div class="row product_checkbox">
+                Public Transport<input type="checkbox"  name="product4" value="Public Transport">
+              </div>
+            </div>
+            <textarea class="comment-area" rows="6" name="details"
+              placeholder="Tell us about your requirement (optional)" spellcheck="true"></textarea>
           </form>
           <div style="display: flex;justify-content: center;">
-            <button class="color" onclick="SubForm()">Contact Us</button>
+            <button class="color" onclick="SubForm()">Submit</button>
           </div>
         </div>
         <div class="details">
@@ -273,12 +283,13 @@
     })
     function SubForm() {
       let values = $("#contactForm").serializeArray();
+      console.log(values)
       if (values[0].value != "" && values[1].value != "" && values[2].value != "" && values[4].value != "none") {
         let valid_email = validateEmail(values[1].value);
         if (valid_email == true) {
           if (values[2].value.length == 10) {
             $.ajax({
-              url: 'https://api.apispreadsheets.com/data/19247/',
+              url: 'https://api.apispreadsheets.com/data/19048/',
               type: 'post',
               data: $("#contactForm").serializeArray(),
               success: function () {
@@ -324,7 +335,7 @@
               header_links[2].classList.remove('current');
               header_links[3].classList.remove('current');
               header_links[6].classList.remove('current');
-            break;
+              break;
             case "about":
               header_links[0].classList.remove('current');
               header_links[1].classList.add('current');
