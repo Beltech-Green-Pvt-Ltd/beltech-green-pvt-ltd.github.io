@@ -115,6 +115,9 @@ function generateFooter(page) {
       <a href="${page == "home" ? "./" : "../"}">Home</a>
       <a href="${page == "home" ? "./" : "../"}team">Team</a>
       <a href="${page == "home" ? "./" : "../"}careers">Careers</a>
+      <a href="${page == "home" ? "./" : "../"}privacyPolicy">Privacy Policy</a>
+      <a href="${page == "home" ? "./" : "../"}refundPolicy">Refund Policy</a>
+      <a href="${page == "home" ? "./" : "../"}T&C">Terms and Conditions</a>
     </div>
     <div class="col">
       <div class="title">Quick Links</div>
