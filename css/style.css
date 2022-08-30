@@ -762,6 +762,7 @@ p {
   color: #58788c;
   line-height: 1.75rem;
   font-size: 1rem; }
+
   p a {
     border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     -webkit-transition: all 0.2s ease;
@@ -771,7 +772,10 @@ p {
   p a:hover {
     cursor: pointer;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
-
+.pq{
+  color:#1d2e47;
+  font-weight: 600;
+}
 .career p.sm {
   font-size: 0.75rem !important;
   margin: 10px 0px;
